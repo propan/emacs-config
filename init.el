@@ -3,6 +3,11 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+;; update load path
+(setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
+
+(add-to-list 'load-path dotfiles-dir)
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -12,8 +17,9 @@
                       clojurescript-mode
                       clojure-test-mode
                       nrepl
-                      color-theme
-                      rainbow-delimiters))
+		      paredit
+                      rainbow-delimiters
+		      css-mode))
 
 (dolist (p my-packages)
       (when (not (package-installed-p p))
@@ -34,7 +40,4 @@
 ;; Rainbow Delimiters
 (global-rainbow-delimiters-mode)
 
-;; custom themes folder
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-
-(load-theme 'tangotango t)
+(require 'custom-colors)
