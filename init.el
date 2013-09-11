@@ -41,3 +41,20 @@
 (global-rainbow-delimiters-mode)
 
 (require 'custom-colors)
+
+(setq inhibit-startup-message t)
+(setq inhibit-startup-echo-area-message t)
+
+(setq quotes-list
+      (list  "It is sometimes an appropriate response to reality to go insane. Philip K. Dick"
+             "Reality is that which, when you stop believing in it, doesn't go away. Philip K. Dick"
+             "If you think this Universe is bad, you should see some of the others. Philip K Dick"
+             "If this isn't nice, what is? Kurt Vonnegut"))
+
+(defun welcome-message ()
+    (nth (random (length quotes-list)) quotes-list))
+
+(setq initial-scratch-message (concat ";;
+;; " (welcome-message) "
+;;
+"))
