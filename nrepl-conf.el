@@ -16,4 +16,17 @@
 (add-hook 'nrepl-mode-hook 'paredit-mode)
 (add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
 
+(require 'ac-nrepl)
+(add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
+(add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
+
+(eval-after-load "auto-complete"
+   '(add-to-list 'ac-modes 'nrepl-mode))
+
+;; emacs-live: specify the print length to be 100 to stop infinite sequences killing things.
+(defun live-nrepl-set-print-length ()
+  (nrepl-send-string-sync "(set! *print-length* 100)" "clojure.core"))
+
+(add-hook 'nrepl-connected-hook 'live-nrepl-set-print-length)
+
 (provide 'nrepl-conf)

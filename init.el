@@ -19,6 +19,7 @@
                       fuzzy
                       auto-complete
                       nrepl
+                      ac-nrepl
                       paredit
                       rainbow-delimiters
                       css-mode))
