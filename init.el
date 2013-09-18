@@ -1,5 +1,5 @@
 ;; Turn off mouse interface early in startup to avoid momentary display
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'menu-bar-mode)(menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
@@ -16,14 +16,16 @@
 (defvar my-packages '(clojure-mode
                       clojurescript-mode
                       clojure-test-mode
+                      fuzzy
+                      auto-complete
                       nrepl
-		      paredit
+                      paredit
                       rainbow-delimiters
-		      css-mode))
+                      css-mode))
 
 (dolist (p my-packages)
       (when (not (package-installed-p p))
-	          (package-install p)))
+          (package-install p)))
 
 (require 'cl)
 (require 'saveplace)
@@ -40,7 +42,9 @@
 ;; Rainbow Delimiters
 (global-rainbow-delimiters-mode)
 
-(require 'custom-colors)
+(require 'auto-complete-conf)
+(require 'nrepl-conf)
+(require 'colors-conf)
 
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
