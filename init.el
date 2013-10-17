@@ -46,6 +46,7 @@
 (require 'auto-complete-conf)
 (require 'nrepl-conf)
 (require 'colors-conf)
+(require 'hooks-conf)
 
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)

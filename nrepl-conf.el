@@ -12,10 +12,6 @@
 ;; change buffer name separator from space to "-"
 (setq nrepl-buffer-name-separator "-")
 
-;; hooks
-(add-hook 'nrepl-mode-hook 'paredit-mode)
-(add-hook 'nrepl-mode-hook 'rainbow-delimiters-mode)
-
 (require 'ac-nrepl)
 (add-hook 'nrepl-mode-hook 'ac-nrepl-setup)
 (add-hook 'nrepl-interaction-mode-hook 'ac-nrepl-setup)
