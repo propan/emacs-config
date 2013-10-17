@@ -47,6 +47,7 @@
 (require 'nrepl-conf)
 (require 'colors-conf)
 (require 'hooks-conf)
+(require 'clojure-conf)
 
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
