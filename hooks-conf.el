@@ -1,12 +1,19 @@
+;; automatic indentation on enter
 (defun set-newline-and-indent ()
   (local-set-key (kbd "RET") 'newline-and-indent))
 
+;; line truncation mode
 (defun set-truncate-lines ()
   (setq truncate-lines t))
 
+;; do not ask, just save
+(defun set-save-without-query ()
+  (setq buffer-save-without-query t))
+
 ;; enable magic powers
 (dolist (x '(scheme emacs-lisp lisp clojure emacs-interaction nrepl))
-  (dolist (m '(paredit-mode set-truncate-lines set-newline-and-indent rainbow-delimiters-mode))
+  (dolist (m '(paredit-mode set-truncate-lines         set-newline-and-indent
+                            rainbow-delimiters-mode    set-save-without-query))
     (add-hook (intern (concat (symbol-name x) "-mode-hook")) m)))
 
 ;; auto-indent yanked code
