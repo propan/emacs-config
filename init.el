@@ -7,6 +7,7 @@
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
 
 (add-to-list 'load-path dotfiles-dir)
+(add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
 
 (require 'package)
 (add-to-list 'package-archives
@@ -49,6 +50,12 @@
 (require 'hooks-conf)
 (require 'clojure-conf)
 
+;; jade-mode configuration
+
+(require 'jade-mode)
+(add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+;; other important stuff
 (setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message t)
 
