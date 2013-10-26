@@ -1,3 +1,6 @@
 [submodule "vendor/jade-mode"]
 	path = vendor/jade-mode
 	url = git@github.com:brianc/jade-mode.git
+[submodule "vendor/align-cljlet"]
+	path = vendor/align-cljlet
+	url = git@github.com:gstamp/align-cljlet.git

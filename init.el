@@ -8,6 +8,7 @@
 
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
+(add-to-list 'load-path "~/.emacs.d/vendor/align-cljlet")
 
 (require 'package)
 (add-to-list 'package-archives
@@ -49,6 +50,7 @@
 (require 'colors-conf)
 (require 'hooks-conf)
 (require 'clojure-conf)
+(require 'align-cljlet)
 
 ;; jade-mode configuration
 

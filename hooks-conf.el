@@ -11,6 +11,10 @@
   (dolist (m '(paredit-mode set-truncate-lines rainbow-delimiters-mode set-save-without-query))
     (add-hook (intern (concat (symbol-name x) "-mode-hook")) m)))
 
+(add-hook 'clojure-mode-hook
+	  (lambda ()
+	    (define-key clojure-mode-map (kbd "C-M-z") 'align-cljlet)))
+
 ;; auto-indent yanked code
 (dolist (command '(yank yank-pop))
    (eval `(defadvice ,command (after indent-region activate)
