@@ -21,6 +21,9 @@
                       fuzzy
                       auto-complete
                       nrepl
+                      git-gutter
+                      fringe-helper
+                      git-gutter-fringe
                       ac-nrepl
                       paredit
                       rainbow-delimiters
@@ -51,6 +54,7 @@
 (require 'hooks-conf)
 (require 'clojure-conf)
 (require 'align-cljlet)
+(require 'git-gutter-conf)
 
 ;; jade-mode configuration
 

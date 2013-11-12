@@ -235,7 +235,7 @@
  `(rpm-spec-tag-face ((t (:foreground "dodger blue" :weight bold))))
  `(rpm-spec-var-face ((t (:foreground "tomato"))))
 
- ;;rainbow-delimiters (
+ ;;rainbow-delimiters
  `(rainbow-delimiters-depth-1-face ((t (:foreground "dark red"))))
  `(rainbow-delimiters-depth-2-face ((t (:foreground "dark green"))))
  `(rainbow-delimiters-depth-3-face ((t (:foreground "deep pink"))))
