@@ -1,5 +1,5 @@
 ;; Turn off mouse interface early in startup to avoid momentary display
-(if (fboundp 'menu-bar-mode)(menu-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
@@ -7,6 +7,7 @@
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
 
 (add-to-list 'load-path dotfiles-dir)
+(add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/align-cljlet")
 
@@ -42,13 +43,25 @@
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 
-;; Show line number
+;; show line number
 (global-linum-mode t)
 
-;; Rainbow Delimiters
+;; rainbow delimiters
 (global-rainbow-delimiters-mode)
 
+;; setup dirs
+(setq
+ tmp-dir       (file-name-as-directory "~/.emacs.d/tmp/")
+ autosaves-dir (file-name-as-directory (concat tmp-dir  "autosaves"))
+ backups-dir   (file-name-as-directory (concat tmp-dir  "backups")))
+
+;; create tmp dirs if necessary
+(make-directory tmp-dir t)
+(make-directory autosaves-dir t)
+(make-directory backups-dir t)
+
 (require 'auto-complete-conf)
+(require 'backup-dir-conf)
 (require 'nrepl-conf)
 (require 'colors-conf)
 (require 'hooks-conf)
