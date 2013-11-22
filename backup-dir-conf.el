@@ -3,7 +3,7 @@
 (make-variable-buffer-local 'backup-inhibited)
 
 (setq bkup-backup-directory-info
-      '((t backups-dir ok-create full-path prepend-name)))
+      `((t ,backups-dir ok-create full-path prepend-name)))
 
 (setq auto-save-file-name-transforms `((".*" ,(concat autosaves-dir "\\1") t)))
 (setq backup-by-copying t)
