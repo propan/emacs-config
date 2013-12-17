@@ -28,7 +28,8 @@
                       ac-nrepl
                       paredit
                       rainbow-delimiters
-                      css-mode))
+                      css-mode
+                      haskell-mode))
 
 (dolist (p my-packages)
       (when (not (package-installed-p p))

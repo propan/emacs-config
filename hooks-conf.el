@@ -17,6 +17,10 @@
 	    (define-key clojure-mode-map (kbd "RET") 'paredit-newline)
 	    (define-key clojure-mode-map (kbd "C-M-z") 'align-cljlet)))
 
+;; haskell mode hooks
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+
 ;; auto-indent yanked code
 (dolist (command '(yank yank-pop))
    (eval `(defadvice ,command (after indent-region activate)
