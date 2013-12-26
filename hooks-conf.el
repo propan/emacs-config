@@ -7,7 +7,7 @@
   (setq buffer-save-without-query t))
 
 ;; enable magic powers
-(dolist (x '(scheme emacs-lisp lisp clojure emacs-interaction nrepl))
+(dolist (x '(scheme emacs-lisp lisp clojure clojurescript emacs-interaction nrepl))
   (dolist (m '(paredit-mode set-truncate-lines rainbow-delimiters-mode set-save-without-query))
     (add-hook (intern (concat (symbol-name x) "-mode-hook")) m)))
 
@@ -25,7 +25,7 @@
 (dolist (command '(yank yank-pop))
    (eval `(defadvice ,command (after indent-region activate)
             (and (not current-prefix-arg)
-                 (member major-mode '(emacs-lisp-mode lisp-mode
+                 (member major-mode '(emacs-lisp-mode lisp-mode       clojurescript-mode
                                                       clojure-mode    scheme-mode
                                                       haskell-mode    ruby-mode
                                                       rspec-mode      python-mode
