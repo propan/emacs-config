@@ -4,3 +4,6 @@
 [submodule "vendor/align-cljlet"]
 	path = vendor/align-cljlet
 	url = git@github.com:gstamp/align-cljlet.git
+[submodule "vendor/emacs-powerline"]
+	path = vendor/emacs-powerline
+	url = git@github.com:jonathanchu/emacs-powerline.git

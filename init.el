@@ -10,6 +10,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/align-cljlet")
+(add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
 
 (require 'package)
 (add-to-list 'package-archives
@@ -38,6 +39,7 @@
 (require 'cl)
 (require 'saveplace)
 (require 'uniquify)
+(require 'powerline)
 
 ;; change identation to 4 spaces
 (setq-default indent-tabs-mode nil)
