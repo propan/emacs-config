@@ -69,6 +69,7 @@
 (require 'colors-conf)
 (require 'hooks-conf)
 (require 'clojure-conf)
+(require 'bindings-conf)
 (require 'align-cljlet)
 (require 'git-gutter-conf)
 
