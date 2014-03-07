@@ -77,6 +77,7 @@
 
 (require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+(add-to-list 'auto-mode-alist '("\\.cljx$" . clojure-mode))
 
 ;; other important stuff
 (setq inhibit-startup-message t)
