@@ -73,6 +73,10 @@
 (require 'align-cljlet)
 (require 'git-gutter-conf)
 
+;; yaml-mode configuraion
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 ;; jade-mode configuration
 
 (require 'jade-mode)

@@ -21,6 +21,11 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
+;; yaml-mode hooks
+(add-hook 'yaml-mode-hook
+          '(lambda ()
+             (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
 ;; auto-indent yanked code
 (dolist (command '(yank yank-pop))
    (eval `(defadvice ,command (after indent-region activate)
