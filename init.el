@@ -73,6 +73,11 @@
 (require 'align-cljlet)
 (require 'git-gutter-conf)
 
+;; hightlight HEX-colors in css
+(require 'live-fontify-hex)
+(font-lock-add-keywords 'css-mode
+                        '((live-fontify-hex-colors)))
+
 ;; yaml-mode configuraion
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
