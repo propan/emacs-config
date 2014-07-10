@@ -22,11 +22,9 @@
                       clojure-test-mode
                       fuzzy
                       auto-complete
-                      nrepl
                       git-gutter
                       fringe-helper
                       git-gutter-fringe
-                      ac-nrepl
                       paredit
                       rainbow-delimiters
                       css-mode
@@ -65,7 +63,6 @@
 
 (require 'auto-complete-conf)
 (require 'backup-dir-conf)
-(require 'nrepl-conf)
 (require 'colors-conf)
 (require 'hooks-conf)
 (require 'clojure-conf)
