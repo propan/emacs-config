@@ -11,13 +11,15 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/align-cljlet")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
+(add-to-list 'load-path "~/.emacs.d/vendor/cider")
 
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
-(defvar my-packages '(clojure-mode
+(defvar my-packages '(dash
+                      clojure-mode
                       clojurescript-mode
                       clojure-test-mode
                       fuzzy
@@ -26,6 +28,7 @@
                       fringe-helper
                       git-gutter-fringe
                       paredit
+                      pkg-info
                       rainbow-delimiters
                       css-mode
                       haskell-mode))
@@ -35,6 +38,7 @@
           (package-install p)))
 
 (require 'cl)
+(require 'cider)
 (require 'saveplace)
 (require 'uniquify)
 (require 'powerline)
@@ -61,9 +65,11 @@
 (make-directory autosaves-dir t)
 (make-directory backups-dir t)
 
+;; configs
 (require 'auto-complete-conf)
 (require 'backup-dir-conf)
 (require 'colors-conf)
+(require 'cider-conf)
 (require 'hooks-conf)
 (require 'clojure-conf)
 (require 'bindings-conf)

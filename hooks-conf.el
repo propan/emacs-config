@@ -7,7 +7,7 @@
   (setq buffer-save-without-query t))
 
 ;; enable magic powers
-(dolist (x '(scheme emacs-lisp lisp clojure clojurescript emacs-interaction))
+(dolist (x '(scheme emacs-lisp lisp clojure clojurescript emacs-interaction cider-repl))
   (dolist (m '(paredit-mode set-truncate-lines rainbow-delimiters-mode set-save-without-query))
     (add-hook (intern (concat (symbol-name x) "-mode-hook")) m)))
 
