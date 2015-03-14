@@ -76,10 +76,11 @@
 (require 'align-cljlet)
 (require 'git-gutter-conf)
 
-;; hightlight HEX-colors in css
+;; hightlight HEX-colors in less and css modes
 (require 'live-fontify-hex)
-(font-lock-add-keywords 'css-mode
-                        '((live-fontify-hex-colors)))
+(dolist (mode '(css-mode less-css-mode))
+  (font-lock-add-keywords mode
+                          '((live-fontify-hex-colors))))
 
 ;; yaml-mode configuraion
 (require 'yaml-mode)
@@ -89,7 +90,12 @@
 
 (require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+;; other modes
 (add-to-list 'auto-mode-alist '("\\.cljx$" . clojure-mode))
+
+(require 'less-css-mode)
+(add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
 
 ;; other important stuff
 (setq inhibit-startup-message t)
