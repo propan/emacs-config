@@ -3,10 +3,7 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; update load path
-(setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
-
-(add-to-list 'load-path dotfiles-dir)
+(add-to-list 'load-path "~/.emacs.d/config")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/align-cljlet")
@@ -21,17 +18,16 @@
 (defvar my-packages '(dash
                       clojure-mode
                       clojurescript-mode
-                      clojure-test-mode
                       fuzzy
                       auto-complete
                       git-gutter
-                      fringe-helper
-                      git-gutter-fringe
                       paredit
                       pkg-info
                       rainbow-delimiters
                       css-mode
-                      haskell-mode))
+                      haskell-mode
+                      spinner
+                      queue))
 
 (dolist (p my-packages)
       (when (not (package-installed-p p))
