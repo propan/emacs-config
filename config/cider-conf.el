@@ -1,3 +1,5 @@
+(setq cider-lein-command "/usr/local/bin/lein")
+
 ;; hide the *nrepl-connection* and *nrepl-server* buffers
 (setq nrepl-hide-special-buffers t)
 

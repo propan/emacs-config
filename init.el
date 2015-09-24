@@ -27,7 +27,8 @@
                       css-mode
                       haskell-mode
                       spinner
-                      queue))
+                      queue
+                      cider))
 
 (dolist (p my-packages)
       (when (not (package-installed-p p))
