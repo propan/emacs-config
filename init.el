@@ -8,16 +8,17 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/align-cljlet")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
-(add-to-list 'load-path "~/.emacs.d/vendor/cider")
+
 
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/"))
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
 (defvar my-packages '(dash
                       clojure-mode
-                      clojurescript-mode
                       fuzzy
                       auto-complete
                       git-gutter
@@ -47,9 +48,6 @@
 
 ;; show line number
 (global-linum-mode t)
-
-;; rainbow delimiters
-(global-rainbow-delimiters-mode)
 
 ;; setup dirs
 (setq
