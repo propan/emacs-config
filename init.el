@@ -29,7 +29,14 @@
                       haskell-mode
                       spinner
                       queue
-                      cider))
+                      cider
+                      ido
+                      idomenu
+                      ido-ubiquitous
+                      flx-ido
+                      smex
+                      projectile
+                      grizzl))
 
 (dolist (p my-packages)
       (when (not (package-installed-p p))
@@ -70,6 +77,8 @@
 (require 'bindings-conf)
 (require 'align-cljlet)
 (require 'git-gutter-conf)
+(require 'ido-conf)
+(require 'projectile-conf)
 
 ;; hightlight HEX-colors in less and css modes
 (require 'live-fontify-hex)
