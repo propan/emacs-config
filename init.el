@@ -36,7 +36,8 @@
                       flx-ido
                       smex
                       projectile
-                      grizzl))
+                      grizzl
+                      swiper))
 
 (dolist (p my-packages)
       (when (not (package-installed-p p))
@@ -79,6 +80,7 @@
 (require 'git-gutter-conf)
 (require 'ido-conf)
 (require 'projectile-conf)
+(require 'swiper-conf)
 
 ;; hightlight HEX-colors in less and css modes
 (require 'live-fontify-hex)
