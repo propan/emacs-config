@@ -37,7 +37,8 @@
                       smex
                       projectile
                       grizzl
-                      swiper))
+                      swiper
+                      aggressive-indent))
 
 (dolist (p my-packages)
       (when (not (package-installed-p p))
