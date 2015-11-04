@@ -7,3 +7,6 @@
 [submodule "vendor/emacs-powerline"]
 	path = vendor/emacs-powerline
 	url = git@github.com:jonathanchu/emacs-powerline.git
+[submodule "vendor/markdown-mode"]
+	path = vendor/markdown-mode
+	url = git://jblevins.org/git/markdown-mode.git

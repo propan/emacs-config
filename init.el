@@ -8,7 +8,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/jade-mode")
 (add-to-list 'load-path "~/.emacs.d/vendor/align-cljlet")
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
-
+(add-to-list 'load-path "~/.emacs.d/vendor/markdown-mode")
 
 (require 'package)
 (package-initialize)
@@ -103,6 +103,13 @@
 
 (require 'less-css-mode)
 (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
+
+;; markdown mode
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 ;; other important stuff
 (setq inhibit-startup-message t)
